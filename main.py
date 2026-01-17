@@ -18,3 +18,5 @@ print(robot1.x, robot1.y, robot1.energy)
 robot1.move("right") # (2,1) - boş, hareket etmeli
 print(robot1.x, robot1.y, robot1.energy)
 
+if __name__ == "__main__":
+  main()
