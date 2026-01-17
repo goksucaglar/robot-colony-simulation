@@ -1,1 +1,1 @@
-
+# programı başlatan kod
