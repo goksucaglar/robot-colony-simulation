@@ -10,3 +10,11 @@ def main():
   world.add_obstacle(3,0)
 
 robot = Robot(world, 0, 0, 100)
+
+robot1.move("right") # (1,0) - boş, hareket etmeli
+print(robot1.x, robot1.y, robot1.energy)
+robot1.move("down") # (1,1) - engel var, hareket etmeyecek
+print(robot1.x, robot1.y, robot1.energy)
+robot1.move("right") # (2,1) - boş, hareket etmeli
+print(robot1.x, robot1.y, robot1.energy)
+
