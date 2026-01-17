@@ -20,3 +20,4 @@ print(robot1.x, robot1.y, robot1.energy)
 
 if __name__ == "__main__":
   main()
+# Bu dosya direkt çalıştırılıyorsa main() çalışsın. Import ediliyorsa çalışmasın.
