@@ -35,8 +35,8 @@ def simulate(world, robot, steps = 20):
         direction = random.choice(empty_directions)
         print("Boş Yönler: ", empty_directions)
         print("Seçilen Yön: ", direction)
+        print(f"Hareket denemesi → {direction}")
         robot.move(direction)
-        
       else:
         print("Robot hareket edemez.")
         break
