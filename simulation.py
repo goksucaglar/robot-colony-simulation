@@ -9,6 +9,25 @@ def simulate(world, robot, steps = 20):
     up = robot.look_cell("up")
     down = robot.look_cell("down")
 
+    if right == "source":
+      robot.move("right")
+    elif left == "source":
+      robot.move("left")
+    elif up == "source":
+      robot.move("up")
+    elif down == "source":
+      robot.move("down")
+    elif right == "empty":
+      robot.move("right")
+    elif left == "empty":
+      robot.move("left")
+    elif up == "empty":
+      robot.move("up")
+    elif down == "empty":
+      robot.move("dowm")
+
+    step += 1
+      
     
 
 
