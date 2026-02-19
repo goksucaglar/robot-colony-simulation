@@ -24,7 +24,7 @@ def simulate(world, robot, steps = 20):
     elif up == "empty":
       robot.move("up")
     elif down == "empty":
-      robot.move("dowm")
+      robot.move("down")
 
     step += 1
       
