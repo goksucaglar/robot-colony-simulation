@@ -33,7 +33,7 @@ def simulate(world, robot, steps = 20):
 
       if empty_directions:
         direction = random.choice(empty_directions)
-        robot.move(directions)
+        robot.move(direction)
       else:
         print("Robot hareket edemez.")
         break
