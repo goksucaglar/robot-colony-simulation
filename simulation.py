@@ -24,11 +24,11 @@ def simulate(world, robot, steps = 20):
 
       if right == "boş":
         empty_directions.append("right")
-      elif left == "boş":
+      if left == "boş":
         empty_directions.append("left")
-      elif up == "boş":
+      if up == "boş":
         empty_directions.append("up")
-      elif down == "boş":
+      if down == "boş":
         empty_directions.append("down")
 
       if empty_directions:
