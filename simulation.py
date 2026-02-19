@@ -5,9 +5,11 @@ def simulate(world, robot, steps = 20):
     print(f"Step {step} Pos: ({robot.x}{robot.y}) Energy: ({robot.energy}")
 
     right = robot.look_cell("right")
-    left =
-    up =
-    down = 
+    left = robot.look_cell("left")
+    up = robot.look_cell("up")
+    down = robot.look_cell("down")
+
+    
 
 
     
