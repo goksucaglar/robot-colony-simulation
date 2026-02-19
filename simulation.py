@@ -1,4 +1,6 @@
 # while loop
+import random
+
 def simulate(world, robot, steps = 20):
   step = 0
   while step < steps and robot.energy > 0 :
@@ -17,14 +19,24 @@ def simulate(world, robot, steps = 20):
       robot.move("up")
     elif down == "kaynak":
       robot.move("down")
-    elif right == "boş":
-      robot.move("right")
-    elif left == "boş":
-      robot.move("left")
-    elif up == "boş":
-      robot.move("up")
-    elif down == "boş":
-      robot.move("down")
+    else:
+      empty_directions = []
+
+      if right == "boş":
+        empty.directions.append("right")
+      elif left == "boş":
+        empty.directions.append("left")
+      elif up == "boş":
+        empty.directions.append("up")
+      elif down == "boş":
+        empty.directions.append("down")
+
+      if empty_directions:
+        direction = random.choice(empty_directions)
+        robot.move(directions)
+      else:
+        print("Robot hareket edemez.")
+        break
 
     step += 1
       
