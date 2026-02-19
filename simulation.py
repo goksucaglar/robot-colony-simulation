@@ -22,13 +22,13 @@ def simulate(world, robot, steps = 20):
     else:
       empty_directions = []
 
-      if right == "boş":
+      if right == "boş" and (robot.x+1, robot.y) not in robot.visited:
         empty_directions.append("right")
-      if left == "boş":
+      if left == "boş" and (robot.x-1, robot.y) not in robot.visited:
         empty_directions.append("left")
-      if up == "boş":
+      if up == "boş" and (robot.x, robot.y+1) not in robot.visited:
         empty_directions.append("up")
-      if down == "boş":
+      if down == "boş" and (robot.x, robot.y-1) not in robot.visited:
         empty_directions.append("down")
 
       if empty_directions:
