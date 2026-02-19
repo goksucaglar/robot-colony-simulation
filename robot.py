@@ -2,6 +2,7 @@
 
 class Robot:
   def __init__(self, world, x, y, energy):
+    self.visited = set()
     self.world = world
     self.x = x
     self.y = y
@@ -32,6 +33,8 @@ class Robot:
 
     self.x = new_x
     self.y = new_y
+
+    self.visited.add((self.x,self.y))
 
     self.check_cell()
 
