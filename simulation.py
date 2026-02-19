@@ -23,13 +23,13 @@ def simulate(world, robot, steps = 20):
       empty_directions = []
 
       if right == "boş":
-        empty.directions.append("right")
+        empty_directions.append("right")
       elif left == "boş":
-        empty.directions.append("left")
+        empty_directions.append("left")
       elif up == "boş":
-        empty.directions.append("up")
+        empty_directions.append("up")
       elif down == "boş":
-        empty.directions.append("down")
+        empty_directions.append("down")
 
       if empty_directions:
         direction = random.choice(empty_directions)
