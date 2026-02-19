@@ -9,21 +9,21 @@ def simulate(world, robot, steps = 20):
     up = robot.look_cell("up")
     down = robot.look_cell("down")
 
-    if right == "source":
+    if right == "kaynak":
       robot.move("right")
-    elif left == "source":
+    elif left == "kaynak":
       robot.move("left")
-    elif up == "source":
+    elif up == "kaynak":
       robot.move("up")
-    elif down == "source":
+    elif down == "kaynak":
       robot.move("down")
-    elif right == "empty":
+    elif right == "boş":
       robot.move("right")
-    elif left == "empty":
+    elif left == "boş":
       robot.move("left")
-    elif up == "empty":
+    elif up == "boş":
       robot.move("up")
-    elif down == "empty":
+    elif down == "boş":
       robot.move("down")
 
     step += 1
