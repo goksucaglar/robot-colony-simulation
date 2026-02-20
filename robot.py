@@ -2,11 +2,11 @@
 
 class Robot:
   def __init__(self, world, x, y, energy):
-    self.visited = set()
     self.world = world
     self.x = x
     self.y = y
     self.energy = energy
+    self.visited = set()
     self.dx = 0 
     self.dy = 0
 
