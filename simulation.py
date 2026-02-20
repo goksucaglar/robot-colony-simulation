@@ -1,5 +1,6 @@
 # while loop
 import random
+from collections import deque
 
 def simulate(world, robot, steps = 20):
   step = 0
@@ -32,5 +33,9 @@ def simulate(world, robot, steps = 20):
         break
 
     step += 1
-      
+     
+  def BFS(world, start, goal):
+    queue = deque()
+    visited = set()
     
+      
