@@ -38,9 +38,9 @@ def simulate(world, robot, steps = 20):
 
     step += 1
      
-  def BFS(world, start, goal):
+  def bfs(world, start, goal):
     queue = deque() # double-ended queue    appendleft / append      popleft / pop
     visited = set()
-    queue.append(start, [start]) # start koordinatı ve yol listesi
+    queue.append( (start, [start]) ) # start koordinatı ve yol listesi
     visited.append(start)
       
