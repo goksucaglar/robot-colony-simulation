@@ -43,6 +43,8 @@ def get_neighbours(self, x, y): # bu hücreden yürünebilecek komşular hangile
       
     return neighbours
 
+# Böylece BFS veya A* algoritması hangi hücreye gidebileceğini kolayca öğrenir.
+
 
 
 
