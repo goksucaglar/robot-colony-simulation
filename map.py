@@ -32,3 +32,20 @@ class Map:
   def is_resource(self, x, y):
     return self.cells[y][x] == 2
 
+def get_neighbours(self, x, y): # bu hücreden yürünebilecek komşular hangileri?
+  directions = [(1,0), (-1,0), (0,1), (0,-1)]
+  neighbours = []
+
+  for dx, dy in directions: 
+    nx, ny = x + dx, y + dy # (nx, ny) → komşu hücrenin koordinatı
+    if self.is_within_bounds(nx, ny) and not self.is_obstacle(nx, ny):
+      neighbours.append((nx, ny))
+
+
+
+
+
+
+
+
+    
