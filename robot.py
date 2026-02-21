@@ -103,6 +103,11 @@ class Robot:
   """
 
   def follow_full_path(self, path): 
+    """
+    Verilen yol boyunca robotu adım adım hareket ettirir.
+    Yolun başındaki mevcut konum atlanır.
+    Enerji biter veya engel çıkarsa durur.
+    """
     if not path or len(path) < 2:
       print("Takip edilecek yol yok.")
       return
