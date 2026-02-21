@@ -113,7 +113,7 @@ class Robot:
       dy = next_y - self.y
 
       # Hareket et
-      self._move_dxdy(self,dx, dy)
+      self._move_dxdy(dx, dy)
       
       print(f"Hareket → Yeni Pozisyon: ({self.x},{self.y}) | Enerji: {self.energy}")
 
