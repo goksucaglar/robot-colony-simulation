@@ -3,7 +3,11 @@ import random
 from collections import deque
 
 def simulate(world, robot, steps = 20):
-  
+  """
+  Robotu hedef konuma yürütür.
+  BFS ile yol bulunur, follow_full_path ile takip edilir.
+  Enerji biter veya hedefe ulaşılırsa simülasyon durur.
+  """
   step = 0
   start = (robot.x, robot.y)
   goal = (5, 5)
