@@ -91,7 +91,7 @@ class Robot:
 
     self._move_dxdy(dx,dy)
 
-  def follow_path(self, path):
+  def follow_path(self, path): # sadece 1 adıma bakıyor biz bunu gelişteceğiz 
     if not path or len(path) < 2:
       return
 
@@ -99,6 +99,26 @@ class Robot:
     dx = next_x - self.x
     dy = next_y - self.y
     self._move_dxdy(dx, dy) # robotun konumunu günceller, enerji düşürür ve kaynak varsa toplar.
+
+  def follow_full_path(self, path): 
+    if not path or len(path) < 2:
+      print("Takip edilecek yol yok.")
+      return
+      
+    # path[0] robotun mevcut yeri, path[1:] üzerinden döneceğiz
+    for next_x, next_y in path[1:]:
+      dx = next_x - self.x
+      dy = next_y - self.y
+
+      # Hareket et
+      self._move_dxdy(self,dx, dy)
+      
+      print(f"Hareket → Yeni Pozisyon: ({self.x},{self.y}) | Enerji: {self.energy}")
+
+      if self.energy <= 0 :
+        print("Enerji bitti.")
+        break
+        
 
 
 
