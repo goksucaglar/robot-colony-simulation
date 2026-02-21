@@ -3,10 +3,13 @@ import random
 from collections import deque
 
 def simulate(world, robot, steps = 20):
+  
   step = 0
-
   start = (robot.x, robot.y)
-  goal = None
+  goal = (5, 5)
+
+  path = bfs(world, start, goal)
+  print("Bulunan yol: ", path)
   
   while step < steps and robot.energy > 0 :
     print(f"Step {step} Pos: ({robot.x},{robot.y}) Energy: ({robot.energy}"))
@@ -38,33 +41,33 @@ def simulate(world, robot, steps = 20):
 
     step += 1
      
-  def bfs(world, start, goal):
-    queue = deque() # double-ended queue    appendleft / append      popleft / pop
-    visited = set()
+def bfs(world, start, goal):
+  queue = deque() # double-ended queue    appendleft / append      popleft / pop
+  visited = set()
     
-    queue.append( (start, [start]) ) # (current_position, path_so_far)
-    visited.add(start)
+  queue.append( (start, [start]) ) # (current_position, path_so_far)
+  visited.add(start)
 
-    while queue:
-      current, path = queue.popleft()
-      if current == goal:
-        return path
+  while queue:
+    current, path = queue.popleft()
+    if current == goal:
+      return path
 
-      x, y = current
-      neighbours = [ (x+1, y), (x-1, y), (x, y+1), (x, y-1) ]
+    x, y = current
+    neighbours = [ (x+1, y), (x-1, y), (x, y+1), (x, y-1) ]
         
-      for nx, ny in neighbours:  # Tuple unpacking again
-        if not ( 0 <= nx < world.width and 0 <= ny < world.height ):
-          continue # Bu komşuyu atla, sıradaki komşuya geç
-        if world.cells[ny][nx] == 1:
-          continue
-        if (nx, ny) in visited:
-          continue
+    for nx, ny in neighbours:  # Tuple unpacking again
+      if not ( 0 <= nx < world.width and 0 <= ny < world.height ):
+        continue # Bu komşuyu atla, sıradaki komşuya geç
+      if world.cells[ny][nx] == 1:
+        continue
+      if (nx, ny) in visited:
+        continue
           
-        visited.add((nx, ny))
-        queue.append(((nx, ny), path + [(nx, ny)])) # )) biri tuple’ı kapatır biri append’i kapatır
+      visited.add((nx, ny))
+      queue.append(((nx, ny), path + [(nx, ny)])) # )) biri tuple’ı kapatır biri append’i kapatır
                      
-    return None # yol yoksa
+  return None # yol yoksa
 
 
 
