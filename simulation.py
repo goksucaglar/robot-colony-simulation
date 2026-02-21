@@ -49,7 +49,10 @@ def simulate(world, robot, steps = 20):
       current, path = queue.popleft()
       if current == goal:
         return path
-      
+
+
+      x, y = current
+      neighbours = [ (x+1, y), (x-1, y), (x, y+1), (x, y-1) ]
         
       
       
