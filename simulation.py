@@ -62,7 +62,7 @@ def simulate(world, robot, steps = 20):
           continue
           
         visited.add((nx, ny))
-        queue.append(((nx, ny), path + [(nx, ny)])
+        queue.append(((nx, ny), path + [(nx, ny)])) # )) biri tuple’ı kapatır biri append’i kapatır
                      
     return None # yol yoksa
 
