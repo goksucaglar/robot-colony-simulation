@@ -98,7 +98,7 @@ class Robot:
     next_x, next_y = path[1] # path[0] robotun mevcut yeri
     dx = next_x - self.x
     dy = next_y - self.y
-    self._move_dxdy(dx, dy)
+    self._move_dxdy(dx, dy) # robotun konumunu günceller, enerji düşürür ve kaynak varsa toplar.
 
 
 
