@@ -56,14 +56,14 @@ def simulate(world, robot, steps = 20):
         
       for nx, ny in neighbours:  # Tuple unpacking again
         if not ( 0 <= nx < world.width and 0 <= ny < world.height ):
-          continue 
+          continue # Bu komşuyu atla, sıradaki komşuya geç
         if world.cells[ny][nx] == 1:
           continue
         if (nx, ny) in visited:
           continue
           
-        visited.add((nx. ny))
-        queue.append(((nx, ny), path + ([nx, ny]))
+        visited.add((nx, ny))
+        queue.append(((nx, ny), path + [(nx, ny)])
         
 
 
