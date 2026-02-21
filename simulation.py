@@ -50,7 +50,6 @@ def simulate(world, robot, steps = 20):
       if current == goal:
         return path
 
-
       x, y = current
       neighbours = [ (x+1, y), (x-1, y), (x, y+1), (x, y-1) ]
         
@@ -64,7 +63,8 @@ def simulate(world, robot, steps = 20):
           
         visited.add((nx, ny))
         queue.append(((nx, ny), path + [(nx, ny)])
-        
+                     
+    return None # yol yoksa
 
 
 
