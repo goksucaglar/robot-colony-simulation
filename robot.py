@@ -90,3 +90,20 @@ class Robot:
       dy = 1
 
     self._move_dxdy(dx,dy)
+
+  def follow_path(self, path):
+    if not path or len(path) < 2:
+      return
+
+    next_x, next_y = path[1] # path[0] robotun mevcut yeri
+    dx = next_x - self.x
+    dy = next_y - self.y
+    self._move_dxdy(dx, dy)
+
+
+
+
+
+
+
+    
