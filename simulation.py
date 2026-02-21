@@ -41,6 +41,15 @@ def simulate(world, robot, steps = 20):
   def bfs(world, start, goal):
     queue = deque() # double-ended queue    appendleft / append      popleft / pop
     visited = set()
-    queue.append( (start, [start]) ) # start koordinatı ve yol listesi
-    visited.append(start)
+    
+    queue.append( (start, [start]) ) # (current_position, path_so_far)
+    visited.add(start)
+
+    while queue:
+      current, path = queue.popleft()
+      if current == goal:
+        return path
+      
+        
+      
       
