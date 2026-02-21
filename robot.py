@@ -77,6 +77,9 @@ class Robot:
       print("Hareket Edemem: ", result)
       return
 
+    dx = 0
+    dy = 0
+
     if direction == "right":
       dx = 1
     elif direction == "left":
