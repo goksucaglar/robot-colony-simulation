@@ -26,13 +26,13 @@ class Map:
   def is_within_bounds(self, x, y):
     return 0 <= x < self.width and 0 <= y < self.height
     
-  def is_obstacle(self, x, y):
+  def is_obstacle(self, x, y): # engel varsa gitmesini engeller
     return self.cells[y][x] == 1
 
-  def is_resource(self, x, y):
+  def is_resource(self, x, y): # kaynak varsa toplamasını sağlar
     return self.cells[y][x] == 2
 
-def get_neighbours(self, x, y): # bu hücreden yürünebilecek komşular hangileri?
+def get_neighbours(self, x, y): # bu hücreden yürünebilecek komşular hangileri? robotun yürüyebileceği hücreleri listeler
   directions = [(1,0), (-1,0), (0,1), (0,-1)]
   neighbours = []
 
