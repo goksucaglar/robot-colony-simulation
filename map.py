@@ -41,7 +41,7 @@ def get_neighbours(self, x, y): # bu hücreden yürünebilecek komşular hangile
     if self.is_within_bounds(nx, ny) and not self.is_obstacle(nx, ny):
       neighbours.append((nx, ny))
       
-    return neighbours
+  return neighbours
 
 # Böylece BFS veya A* algoritması hangi hücreye gidebileceğini kolayca öğrenir.
 
