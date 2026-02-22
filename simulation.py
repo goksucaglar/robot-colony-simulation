@@ -3,12 +3,7 @@ import random
 from collections import deque
 
 def simulate(world, robot, steps = 20):
-  """
-  Robotu hedef konuma yürütür.
-  BFS ile yol bulunur, follow_full_path ile takip edilir.
-  Enerji biter veya hedefe ulaşılırsa simülasyon durur.
-  Kaynak varsa otomatik toplanır.
-  """
+  
   step = 0
   start = (robot.x, robot.y)
   goal = (5, 5)
@@ -16,7 +11,6 @@ def simulate(world, robot, steps = 20):
   path = bfs(world, start, goal)
   print("Bulunan yol: ", path)
   
-  """
   while step < steps and robot.energy > 0 :
     print(f"Step {step} Pos: ({robot.x},{robot.y}) Energy: ({robot.energy}"))
 
@@ -46,7 +40,6 @@ def simulate(world, robot, steps = 20):
         break
 
     step += 1
-
      
 def bfs(world, start, goal):
   queue = deque() # double-ended queue    appendleft / append      popleft / pop
@@ -75,32 +68,3 @@ def bfs(world, start, goal):
       queue.append(((nx, ny), path + [(nx, ny)])) # )) biri tuple’ı kapatır biri append’i kapatır
                      
   return None # yol yoksa
-  """
-
-def bfs(world, start, goal):
-  # Breadth-First Search ile yol bulma
-  queue = deque() # double-ended queue    appendleft / append      popleft / pop
-  visited = set()
-    
-  queue.append( (start, [start]) ) # (current_position, path_so_far)
-  visited.add(start)
-
-  while queue:
-    current, path = queue.popleft()
-    if current == goal:
-      return path
-
-    x, y = current
-    neighbours = world.get_neoghbours(x,y)
-        
-    for nx, ny in neighbours:  # Tuple unpacking again
-      if (nx, ny) not in visited:
-        visited.add((nx, ny))
-        queue.append(((nx, ny), path + [(nx, ny)])) # )) biri tuple’ı kapatır biri append’i kapatır
-                     
-  return None # yol yoksa
-
-
-
-        
-        
