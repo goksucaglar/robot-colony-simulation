@@ -11,6 +11,8 @@ def simulate(world, robot, goal, steps=50):
     """
     step = 0
 
+    
+
    
 
 
